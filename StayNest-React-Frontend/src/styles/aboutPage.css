@@ -1,0 +1,271 @@
+.about-page {
+  background-color: #f8f5ef;
+}
+
+.about-hero {
+  min-height: 510px;
+  padding: 70px 8%;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 30, 23, 0.82),
+      rgba(7, 30, 23, 0.25)
+    ),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c")
+      center/cover;
+  display: flex;
+  align-items: center;
+}
+
+.about-hero > div {
+  max-width: 750px;
+}
+
+.about-hero p {
+  color: #e2ad51;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.about-hero h1 {
+  margin: 15px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.about-hero h1 span {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.about-introduction {
+  max-width: 1300px;
+  margin: auto;
+  padding: 90px 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.about-introduction h2,
+.about-story-content h2,
+.about-values-heading h2,
+.about-host-section h2 {
+  margin: 0;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.about-introduction-description p,
+.about-story-content > p:not(.section-small-title) {
+  color: #65716b;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-story-section {
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.about-story-image {
+  min-height: 610px;
+}
+
+.about-story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-story-content {
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-statistics {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #dedbd3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.about-statistics div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.about-statistics strong {
+  color: #b77d23;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 31px;
+}
+
+.about-statistics span {
+  color: #6b7771;
+  font-size: 13px;
+}
+
+.about-values-section {
+  padding: 90px 7%;
+}
+
+.about-values-heading {
+  margin-bottom: 38px;
+  text-align: center;
+}
+
+.about-values-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.about-value-card {
+  padding: 35px 28px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0ded7;
+}
+
+.about-value-card:last-child {
+  border-right: none;
+}
+
+.about-value-card svg {
+  margin-bottom: 24px;
+  color: #b77d23;
+}
+
+.about-value-card h3 {
+  margin: 0 0 12px;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.about-value-card p {
+  margin: 0;
+  color: #69756f;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.about-host-section {
+  padding: 75px 8%;
+  color: #ffffff;
+  background-color: #173f35;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-host-section > svg {
+  color: #e2ad51;
+}
+
+.about-host-section h2 {
+  color: #ffffff;
+}
+
+.about-host-section div > p:last-child {
+  color: #cbd8d3;
+}
+
+.about-host-section > a {
+  padding: 14px 20px;
+  color: #173f35;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .about-introduction,
+  .about-story-section {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-value-card {
+    border-bottom: 1px solid #e0ded7;
+  }
+
+  .about-host-section {
+    grid-template-columns: auto 1fr;
+  }
+
+  .about-host-section > a {
+    grid-column: 2;
+    width: max-content;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-hero {
+    min-height: 440px;
+    padding: 55px 20px;
+  }
+
+  .about-hero h1 {
+    font-size: 41px;
+  }
+
+  .about-introduction {
+    padding: 65px 20px;
+    gap: 25px;
+  }
+
+  .about-introduction h2,
+  .about-story-content h2,
+  .about-values-heading h2,
+  .about-host-section h2 {
+    font-size: 33px;
+  }
+
+  .about-story-image {
+    min-height: 350px;
+  }
+
+  .about-story-content {
+    padding: 60px 20px;
+  }
+
+  .about-values-section {
+    padding: 65px 20px;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-value-card {
+    border-right: none;
+  }
+
+  .about-host-section {
+    padding: 60px 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .about-host-section > a {
+    grid-column: auto;
+  }
+}

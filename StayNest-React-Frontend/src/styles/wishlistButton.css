@@ -1,0 +1,132 @@
+.wishlist-button,
+.listing-image button,
+.details-wishlist-button {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.wishlist-button.wishlisted,
+.listing-image button.wishlisted,
+.details-wishlist-button.wishlisted {
+  color: #a52e2e;
+}
+
+.wishlist-button:hover,
+.listing-image button:hover {
+  transform: scale(1.08);
+}
+
+.details-wishlist-button.wishlisted {
+  color: #ffffff;
+  background-color: #a52e2e;
+  border-color: #a52e2e;
+}
+
+.featured-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.featured-client-add {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: #ffffff;
+  background-color: #1f5c4c;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.featured-client-actions {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 8;
+  display: flex;
+  gap: 8px;
+}
+
+.featured-client-actions button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: #ffffff;
+  background-color: #1f5c4c;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.featured-client-actions button.featured-client-delete {
+  background-color: #a53b3b;
+}
+
+.property-hidden-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 8;
+  padding: 6px 11px;
+  color: #ffffff;
+  background-color: #68736f;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.wishlist-api-button {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  color: #173f35;
+  background-color: rgba(255, 255, 255, 0.94);
+  border: none;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  cursor: pointer;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.16);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.wishlist-api-button:hover {
+  transform: scale(1.06);
+}
+
+.wishlist-api-button.saved {
+  color: #a52e2e;
+  background-color: #ffffff;
+}
+
+.wishlist-api-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.wishlist-api-button span {
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.wishlist-api-button:has(span) {
+  width: auto;
+  min-width: 105px;
+  padding: 0 15px;
+  border-radius: 24px;
+}

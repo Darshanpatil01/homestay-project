@@ -1,0 +1,292 @@
+.property-details-page {
+  padding: 55px 7% 90px;
+  background-color: #f8f5ef;
+}
+
+.property-heading {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.property-location,
+.property-rating {
+  color: #66736d;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.property-heading h1 {
+  margin: 10px 0;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.property-rating {
+  font-size: 14px;
+}
+
+.property-rating span {
+  padding-left: 10px;
+  border-left: 1px solid #b8c0bc;
+}
+
+.details-wishlist-button {
+  padding: 11px 17px;
+  color: #173f35;
+  background-color: transparent;
+  border: 1px solid #173f35;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.property-gallery {
+  max-width: 1400px;
+  height: 520px;
+  margin: 35px auto 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.property-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.property-main-image {
+  grid-row: 1 / 3;
+}
+
+.property-main-content {
+  max-width: 1400px;
+  margin: 55px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 370px;
+  gap: 70px;
+  align-items: start;
+}
+
+.property-summary {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #dedbd3;
+  display: flex;
+  gap: 50px;
+}
+
+.property-summary span {
+  color: #69756f;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  column-gap: 8px;
+  font-size: 13px;
+}
+
+.property-summary svg {
+  grid-row: 1 / 3;
+  color: #b77d23;
+}
+
+.property-summary strong {
+  color: #173f35;
+}
+
+.property-section {
+  padding: 33px 0;
+  border-bottom: 1px solid #dedbd3;
+}
+
+.property-section h2 {
+  margin: 0 0 17px;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.property-section p {
+  color: #65716b;
+  line-height: 1.8;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.amenities-grid span {
+  color: #42554c;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.amenities-grid svg {
+  color: #b77d23;
+}
+
+.booking-card {
+  padding: 27px;
+  background-color: #ffffff;
+  border: 1px solid #dedbd3;
+  position: sticky;
+  top: 105px;
+  box-shadow: 0 15px 40px rgba(23, 63, 53, 0.09);
+}
+
+.booking-price strong {
+  color: #173f35;
+  font-size: 25px;
+}
+
+.booking-price span {
+  color: #6d7973;
+}
+
+.booking-card form {
+  margin-top: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.booking-card label {
+  color: #33483f;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.booking-card input {
+  width: 100%;
+  height: 45px;
+  padding: 0 10px;
+  border: 1px solid #d6dcd8;
+}
+
+.booking-date-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.booking-card form button {
+  height: 48px;
+  color: #ffffff;
+  background-color: #173f35;
+  border: none;
+}
+
+.booking-card form button:hover {
+  background-color: #b77d23;
+}
+
+.booking-card > p {
+  color: #7a8580;
+  font-size: 11px;
+  text-align: center;
+}
+
+.property-not-found {
+  min-height: 60vh;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.property-not-found a {
+  color: #b77d23;
+}
+
+@media (max-width: 900px) {
+  .property-gallery {
+    height: 430px;
+  }
+
+  .property-main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-card {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .property-details-page {
+    padding: 40px 18px 65px;
+  }
+
+  .property-heading h1 {
+    font-size: 37px;
+  }
+
+  .property-gallery {
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 150px;
+  }
+
+  .property-main-image {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+
+  .property-summary {
+    gap: 20px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.details-wishlist-active {
+  color: #ffffff;
+  border-color: #a53b3b;
+  background: #a53b3b;
+}
+
+.property-extra-information {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    minmax(0, 1fr)
+  );
+  gap: 12px;
+}
+
+.property-extra-information > span {
+  padding: 15px;
+  border: 1px solid #e0e8e5;
+  border-radius: 8px;
+  display: grid;
+  gap: 5px;
+  color: #63766e;
+  background: #f8faf9;
+  font-size: 13px;
+}
+
+.property-extra-information strong {
+  color: #294239;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 550px) {
+  .property-extra-information {
+    grid-template-columns: 1fr;
+  }
+}

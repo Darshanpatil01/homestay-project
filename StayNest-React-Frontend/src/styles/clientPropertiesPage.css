@@ -1,0 +1,262 @@
+.client-add-property {
+  padding: 12px 17px;
+  color: #ffffff;
+  background-color: #173f35;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.client-properties-success {
+  margin-bottom: 20px;
+  padding: 13px 15px;
+  color: #155e37;
+  background-color: #e2f3e8;
+  border: 1px solid #b8dfc5;
+}
+
+.client-properties-filters {
+  margin-bottom: 24px;
+  padding: 19px;
+  background-color: #ffffff;
+  border: 1px solid #e0e4e1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.client-property-search {
+  width: 100%;
+  max-width: 520px;
+  height: 45px;
+  padding: 0 13px;
+  border: 1px solid #d5dcd8;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.client-property-search svg {
+  color: #748079;
+}
+
+.client-property-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.client-properties-filters select {
+  height: 45px;
+  padding: 0 13px;
+  background-color: #ffffff;
+  border: 1px solid #d5dcd8;
+  outline: none;
+}
+
+.client-properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.client-property-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e4e1;
+}
+
+.client-property-image {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.client-property-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.client-property-status,
+.client-property-featured {
+  padding: 6px 9px;
+  color: #ffffff;
+  position: absolute;
+  top: 12px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.client-property-status {
+  left: 12px;
+}
+
+.client-property-status.active {
+  background-color: #23714e;
+}
+
+.client-property-status.hidden {
+  background-color: #68756f;
+}
+
+.client-property-status.unavailable {
+  background-color: #a33b3b;
+}
+
+.client-property-featured {
+  right: 12px;
+  background-color: #b77d23;
+}
+
+.client-property-content {
+  padding: 19px;
+}
+
+.client-property-content > p {
+  margin: 0;
+  color: #b77d23;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.client-property-content h2 {
+  margin: 8px 0;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.client-property-content > span {
+  color: #718078;
+  font-size: 12px;
+}
+
+.client-property-information {
+  margin: 18px 0;
+  padding: 15px 0;
+  border-top: 1px solid #e5e7e4;
+  border-bottom: 1px solid #e5e7e4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  color: #66736d;
+  font-size: 12px;
+}
+
+.client-property-information strong {
+  width: 100%;
+  color: #173f35;
+  font-size: 17px;
+}
+
+.client-property-information small {
+  color: #77817c;
+  font-weight: 400;
+}
+
+.client-property-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.client-property-actions a,
+.client-property-actions button {
+  width: 37px;
+  height: 37px;
+  padding: 0;
+  color: #ffffff;
+  background-color: #50665c;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.client-property-actions button {
+  background-color: #1f5c4c;
+}
+
+.client-property-actions button.delete {
+  background-color: #a33b3b;
+}
+
+.client-properties-state {
+  min-height: 330px;
+  padding: 30px;
+  color: #68756f;
+  background-color: #ffffff;
+  border: 1px solid #e0e4e1;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 11px;
+  text-align: center;
+}
+
+.client-properties-state h2,
+.client-properties-state p {
+  margin: 0;
+}
+
+.client-properties-state h2 {
+  color: #173f35;
+}
+
+.client-properties-state button {
+  margin-top: 10px;
+  padding: 11px 16px;
+  color: #ffffff;
+  background-color: #173f35;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.client-properties-error {
+  margin-bottom: 20px;
+  padding: 13px 15px;
+  color: #8b2b2b;
+  background-color: #fff0f0;
+  border: 1px solid #e5b9b9;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.client-properties-error button {
+  margin-left: auto;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+@media (max-width: 1150px) {
+  .client-properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .client-properties-filters {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .client-property-search {
+    max-width: none;
+  }
+
+  .client-properties-grid {
+    grid-template-columns: 1fr;
+  }
+}

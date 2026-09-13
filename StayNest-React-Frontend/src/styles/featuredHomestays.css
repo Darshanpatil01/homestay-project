@@ -1,0 +1,367 @@
+.featured-section {
+  padding: 90px 7%;
+  background-color: #ffffff;
+}
+
+.featured-heading {
+  max-width: 1400px;
+  margin: 0 auto 38px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.featured-heading h2 {
+  margin: 0;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 43px;
+  font-weight: 500;
+}
+
+.homestay-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.homestay-card {
+  background-color: #ffffff;
+}
+
+.homestay-image-container {
+  height: 285px;
+  position: relative;
+  overflow: hidden;
+}
+
+.homestay-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.homestay-card:hover .homestay-image {
+  transform: scale(1.05);
+}
+
+.featured-badge {
+  padding: 8px 11px;
+  color: #ffffff;
+  background-color: #173f35;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.wishlist-button {
+  width: 42px;
+  height: 42px;
+  color: #173f35;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.wishlist-button:hover {
+  color: #ffffff;
+  background-color: #b77d23;
+}
+
+.homestay-card-content {
+  padding-top: 19px;
+}
+
+.homestay-title-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.homestay-location {
+  margin: 0;
+  color: #66736d;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.homestay-title-row h3 {
+  margin: 7px 0 16px;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.homestay-rating {
+  height: max-content;
+  color: #173f35;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.homestay-information {
+  padding: 15px 0;
+  border-top: 1px solid #e4e0d8;
+  border-bottom: 1px solid #e4e0d8;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: #65716b;
+  font-size: 13px;
+}
+
+.homestay-information span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.homestay-information strong {
+  margin-left: auto;
+  color: #173f35;
+  font-size: 16px;
+}
+
+.homestay-information small {
+  font-weight: normal;
+}
+
+.view-property-button {
+  margin-top: 17px;
+  color: #173f35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.view-property-button:hover {
+  color: #b77d23;
+}
+
+@media (max-width: 992px) {
+  .homestay-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .featured-section {
+    padding: 65px 18px;
+  }
+
+  .featured-heading h2 {
+    font-size: 34px;
+  }
+
+  .featured-heading .view-all-link {
+    display: none;
+  }
+
+  .homestay-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .homestay-image-container {
+    height: 290px;
+  }
+
+  .homestay-information {
+    flex-wrap: wrap;
+  }
+
+  .homestay-information strong {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.featured-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.homestay-add-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: #1f5c4c;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(20, 35, 30, 0.18);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.homestay-add-button:hover {
+  background: #17483c;
+  transform: scale(1.06);
+}
+
+.homestay-client-actions {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 8;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.client-homestay-card:hover .homestay-client-actions,
+.homestay-client-actions:focus-within {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.homestay-client-button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.homestay-client-button:hover {
+  transform: scale(1.08);
+}
+
+.homestay-edit-button {
+  background: #1f5c4c;
+}
+
+.homestay-edit-button:hover {
+  background: #17483c;
+}
+
+.homestay-delete-button {
+  background: #a53b3b;
+}
+
+.homestay-delete-button:hover {
+  background: #822d2d;
+}
+
+.homestay-add-button:focus-visible,
+.homestay-client-button:focus-visible {
+  outline: 3px solid rgba(211, 166, 75, 0.65);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .featured-heading-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .homestay-client-actions {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+.property-hidden-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 8;
+  padding: 6px 11px;
+  border-radius: 20px;
+  color: #ffffff;
+  background: #6d7773;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.client-inactive-content {
+  opacity: 0.58;
+}
+
+.featured-heading-content {
+  display: grid;
+  gap: 10px;
+}
+
+.featured-title-control {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.featured-heading-edit-button {
+  width: 35px;
+  height: 35px;
+  margin-top: 5px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: #1f5c4c;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.featured-heading-edit-button:hover {
+  background: #17483c;
+  transform: scale(1.06);
+}
+
+.featured-heading-edit-button:focus-visible {
+  outline: 3px solid rgba(211, 166, 75, 0.65);
+  outline-offset: 3px;
+}
+
+.featured-heading-description {
+  max-width: 650px;
+  margin: 0;
+  color: #687a73;
+  line-height: 1.7;
+}

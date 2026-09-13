@@ -1,0 +1,299 @@
+.homestays-page {
+  background-color: #f8f5ef;
+}
+
+.homestays-banner {
+  padding: 80px 7%;
+  color: #ffffff;
+  background:
+    linear-gradient(rgba(10, 37, 29, 0.75), rgba(10, 37, 29, 0.75)),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c")
+      center/cover;
+  text-align: center;
+}
+
+.homestays-banner > p,
+.results-heading p {
+  margin: 0 0 12px;
+  color: #e0aa4b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.homestays-banner h1 {
+  margin: 0 0 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.homestays-banner span {
+  color: #dce5e1;
+}
+
+.homestays-content {
+  max-width: 1450px;
+  margin: auto;
+  padding: 75px 5%;
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 45px;
+}
+
+.homestay-filters {
+  height: max-content;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 1px solid #e0ded7;
+  position: sticky;
+  top: 100px;
+}
+
+.filter-heading,
+.results-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-heading h2 {
+  margin: 0;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+}
+
+.filter-heading button {
+  padding: 0;
+  color: #b77d23;
+  background: none;
+  border: none;
+  font-size: 12px;
+}
+
+.filter-group {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  color: #34483f;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.filter-group select,
+.filter-search-input {
+  width: 100%;
+  height: 45px;
+  padding: 0 11px;
+  background-color: #ffffff;
+  border: 1px solid #d8ddd9;
+}
+
+.filter-search-input {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.filter-search-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.results-heading {
+  margin-bottom: 27px;
+}
+
+.results-heading h2 {
+  margin: 0;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.results-heading select {
+  padding: 11px;
+  background-color: #ffffff;
+  border: 1px solid #d8ddd9;
+}
+
+.all-homestays-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.listing-card {
+  background-color: #ffffff;
+  border: 1px solid #e0ded7;
+}
+
+.listing-image {
+  height: 270px;
+  position: relative;
+  overflow: hidden;
+}
+
+.listing-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.listing-image button {
+  width: 41px;
+  height: 41px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+}
+
+.listing-content {
+  padding: 20px;
+}
+
+.listing-location {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.listing-location span,
+.listing-location strong {
+  color: #69756f;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.listing-location strong {
+  color: #173f35;
+}
+
+.listing-content h3 {
+  margin: 9px 0 17px;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.listing-features {
+  display: flex;
+  gap: 18px;
+  color: #68746e;
+  font-size: 13px;
+}
+
+.listing-features span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.listing-footer {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e3e0d9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.listing-footer p {
+  margin: 0;
+}
+
+.listing-footer strong {
+  color: #173f35;
+  font-size: 18px;
+}
+
+.listing-footer span {
+  color: #707a75;
+  font-size: 12px;
+}
+
+.listing-footer a {
+  padding: 10px 14px;
+  color: #ffffff;
+  background-color: #173f35;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.no-properties-found {
+  padding: 70px 20px;
+  color: #6b7771;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.no-properties-found h3 {
+  color: #173f35;
+}
+
+@media (max-width: 950px) {
+  .homestays-content {
+    grid-template-columns: 1fr;
+  }
+
+  .homestay-filters {
+    position: static;
+  }
+}
+
+@media (max-width: 650px) {
+  .homestays-banner h1 {
+    font-size: 37px;
+  }
+
+  .homestays-content {
+    padding: 50px 18px;
+  }
+
+  .all-homestays-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.listing-image button.listing-wishlist-active {
+  color: #ffffff;
+  background: #a53b3b;
+}
+
+.no-properties-found button {
+  min-height: 41px;
+  margin-top: 10px;
+  padding: 0 17px;
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+  background: #1f5c4c;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.no-properties-found button:hover {
+  background: #17483c;
+}

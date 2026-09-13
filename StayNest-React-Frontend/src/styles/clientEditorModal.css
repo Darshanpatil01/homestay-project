@@ -1,0 +1,257 @@
+.client-editor-overlay {
+  padding: 20px;
+  background-color: rgba(7, 24, 18, 0.74);
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: grid;
+  place-items: center;
+}
+
+.client-editor-modal {
+  width: 100%;
+  max-width: 650px;
+  max-height: calc(100vh - 40px);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+.client-editor-header {
+  padding: 22px 25px;
+  border-bottom: 1px solid #e0e4e1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.client-editor-header p {
+  margin: 0 0 5px;
+  color: #b77d23;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.client-editor-header h2 {
+  margin: 0;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.client-editor-header > button {
+  width: 39px;
+  height: 39px;
+  padding: 0;
+  color: #173f35;
+  background-color: #f0f2ef;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.client-editor-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.client-editor-field {
+  color: #30463d;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.client-editor-field input,
+.client-editor-field textarea,
+.client-editor-field select {
+  width: 100%;
+  padding: 12px;
+  color: #263c33;
+  background-color: #ffffff;
+  border: 1px solid #d4dbd7;
+  outline: none;
+  font: inherit;
+  font-weight: 400;
+}
+
+.client-editor-field input,
+.client-editor-field select {
+  height: 47px;
+}
+
+.client-editor-field textarea {
+  resize: vertical;
+  min-height: 105px;
+}
+
+.client-editor-field input:focus,
+.client-editor-field textarea:focus,
+.client-editor-field select:focus {
+  border-color: #173f35;
+}
+
+.client-editor-checkbox {
+  padding: 13px;
+  background-color: #f6f7f4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #30463d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.client-editor-checkbox input {
+  accent-color: #173f35;
+}
+
+.client-editor-preview {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.client-editor-no-image {
+  height: 120px;
+  color: #758079;
+  background-color: #f4f4f0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 7px;
+}
+
+.client-upload-button {
+  width: max-content;
+  padding: 10px 15px;
+  color: #ffffff;
+  background-color: #1f5c4c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.client-upload-button input {
+  display: none;
+}
+
+.client-editor-error {
+  padding: 12px 14px;
+  color: #8a2727;
+  background-color: #fff0f0;
+  border: 1px solid #e6baba;
+  font-size: 13px;
+}
+
+.client-editor-footer {
+  padding: 18px 25px;
+  border-top: 1px solid #e0e4e1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.client-editor-footer button {
+  min-height: 43px;
+  padding: 10px 17px;
+  border: 1px solid #cfd6d2;
+  cursor: pointer;
+}
+
+.client-editor-save {
+  color: #ffffff;
+  background-color: #173f35;
+  border-color: #173f35 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.client-editor-footer button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.client-delete-dialog {
+  width: 100%;
+  max-width: 430px;
+  padding: 32px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.client-delete-dialog > svg {
+  color: #a53b3b;
+}
+
+.client-delete-dialog h2 {
+  color: #173f35;
+}
+
+.client-delete-dialog p {
+  color: #68756f;
+}
+
+.client-delete-dialog > div:last-child {
+  margin-top: 23px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.client-delete-dialog button {
+  padding: 11px 18px;
+  border: 1px solid #d0d5d2;
+  cursor: pointer;
+}
+
+.client-delete-dialog .confirm-delete {
+  color: #ffffff;
+  background-color: #a53b3b;
+  border-color: #a53b3b;
+}
+
+.client-spin {
+  animation: client-spinner 0.8s linear infinite;
+}
+
+@keyframes client-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .client-editor-overlay {
+    padding: 0;
+  }
+
+  .client-editor-modal {
+    max-height: 100vh;
+    height: 100vh;
+  }
+
+  .client-editor-header,
+  .client-editor-body,
+  .client-editor-footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}

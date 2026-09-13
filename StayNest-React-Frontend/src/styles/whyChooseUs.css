@@ -1,0 +1,266 @@
+.why-choose-section {
+  padding: 95px 7%;
+  background-color: #ffffff;
+}
+
+.why-choose-heading {
+  max-width: 620px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.why-choose-heading h2 {
+  margin: 0;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 43px;
+  font-weight: 500;
+}
+
+.why-choose-heading > p:last-child {
+  margin: 17px 0 0;
+  color: #68756f;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.benefits-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #dedbd3;
+  border-bottom: 1px solid #dedbd3;
+}
+
+.benefit-card {
+  min-height: 245px;
+  padding: 35px 25px;
+  border-right: 1px solid #dedbd3;
+}
+
+.benefit-card:last-child {
+  border-right: none;
+}
+
+.benefit-icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 26px;
+  color: #b77d23;
+  background-color: #f5efe4;
+  display: grid;
+  place-items: center;
+}
+
+.benefit-card h3 {
+  margin: 0 0 12px;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.benefit-card p {
+  margin: 0;
+  color: #6a756f;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1100px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: none;
+  }
+
+  .benefit-card {
+    border-bottom: 1px solid #dedbd3;
+  }
+
+  .benefit-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  .benefit-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 576px) {
+  .why-choose-section {
+    padding: 65px 18px;
+  }
+
+  .why-choose-heading h2 {
+    font-size: 34px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-card {
+    min-height: auto;
+    border-right: none;
+  }
+
+  .benefit-card:last-child {
+    grid-column: auto;
+  }
+}
+.why-choose-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+}
+
+.benefit-add-button {
+  width: 40px;
+  height: 40px;
+  margin-top: 4px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: #1f5c4c;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(20, 35, 30, 0.18);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.benefit-add-button:hover {
+  background: #17483c;
+  transform: scale(1.06);
+}
+
+.benefit-card {
+  position: relative;
+}
+
+.benefit-client-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 8;
+  display: flex;
+  gap: 7px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.benefit-card:hover .benefit-client-actions,
+.benefit-client-actions:focus-within {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.benefit-action-button {
+  width: 33px;
+  height: 33px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.benefit-action-button:hover {
+  transform: scale(1.08);
+}
+
+.benefit-edit-button {
+  background: #1f5c4c;
+}
+
+.benefit-edit-button:hover {
+  background: #17483c;
+}
+
+.benefit-delete-button {
+  background: #a53b3b;
+}
+
+.benefit-delete-button:hover {
+  background: #822d2d;
+}
+
+.benefit-hidden-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 7;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: #ffffff;
+  background: #6d7773;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.benefit-add-button:focus-visible,
+.benefit-action-button:focus-visible {
+  outline: 3px solid rgba(211, 166, 75, 0.65);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .benefit-client-actions {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+.benefit-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.benefit-heading-edit-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: #1f5c4c;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(20, 35, 30, 0.18);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.benefit-heading-edit-button:hover {
+  background: #17483c;
+  transform: scale(1.06);
+}
+
+.benefit-heading-edit-button:focus-visible {
+  outline: 3px solid rgba(211, 166, 75, 0.65);
+  outline-offset: 3px;
+}

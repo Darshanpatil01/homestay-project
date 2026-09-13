@@ -1,0 +1,50 @@
+# Eclipse and STS workspace
+.metadata/
+**/.metadata/
+**/.settings/
+**/.project
+**/.classpath
+**/.factorypath
+**/.sts4-cache/
+
+# Java and Maven
+**/target/
+**/bin/
+*.class
+*.jar
+*.war
+*.log
+
+# React and Vite
+**/node_modules/
+**/dist/
+**/.vite/
+**/.cache/
+
+# Environment files and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!**/.env.example
+
+# Uploads
+**/uploads/*
+!**/uploads/.gitkeep
+
+# IDE files
+**/.vscode/
+**/.idea/
+*.iml
+
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

@@ -1,0 +1,350 @@
+.destinations-section {
+  padding: 120px 7% 90px;
+  background-color: #f8f5ef;
+}
+
+.destinations-heading {
+  max-width: 1400px;
+  margin: 0 auto 38px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.section-small-title {
+  margin: 0 0 14px;
+  color: #b77d23;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.destinations-heading h2 {
+  margin: 0;
+  color: #173f35;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 43px;
+  font-weight: 500;
+}
+
+.view-all-link {
+  padding-bottom: 5px;
+  color: #173f35;
+  border-bottom: 1px solid #173f35;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.destinations-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.destination-card {
+  min-height: 340px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  transition: transform 0.4s ease;
+}
+
+.destination-card:hover img {
+  transform: scale(1.06);
+}
+
+.destination-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 28, 23, 0.05),
+    rgba(10, 28, 23, 0.85)
+  );
+}
+
+.destination-number {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+}
+
+.destination-information {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+}
+
+.destination-information h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 31px;
+  font-weight: 500;
+}
+
+.destination-information p {
+  margin: 7px 0 0;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .destinations-section {
+    padding-top: 170px;
+  }
+
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destination-card {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .destinations-section {
+    padding: 280px 18px 65px;
+  }
+
+  .destinations-heading h2 {
+    font-size: 34px;
+  }
+
+  .view-all-link {
+    display: none;
+  }
+
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-card {
+    min-height: 320px;
+  }
+}
+
+.destination-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.destination-add-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: #1f5c4c;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(20, 35, 30, 0.18);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.destination-add-button:hover {
+  background: #17483c;
+  transform: scale(1.06);
+}
+
+.destination-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.destination-card:focus-visible {
+  outline: 3px solid rgba(31, 92, 76, 0.55);
+  outline-offset: 4px;
+}
+
+.destination-card-actions {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 8;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.destination-card:hover .destination-card-actions,
+.destination-card-actions:focus-within {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.destination-action-button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.destination-action-button:hover {
+  transform: scale(1.08);
+}
+
+.destination-edit-button {
+  background: #1f5c4c;
+}
+
+.destination-edit-button:hover {
+  background: #17483c;
+}
+
+.destination-delete-button {
+  background: #a53b3b;
+}
+
+.destination-delete-button:hover {
+  background: #822d2d;
+}
+
+.destination-add-button:focus-visible,
+.destination-action-button:focus-visible {
+  outline: 3px solid rgba(211, 166, 75, 0.65);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .destination-heading-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .destination-card-actions {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+.client-inactive-content {
+  opacity: 0.58;
+}
+
+.client-hidden-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 8;
+  padding: 6px 11px;
+  border-radius: 20px;
+  color: #ffffff;
+  background: #6d7773;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.client-empty-content {
+  min-height: 180px;
+  padding: 30px;
+  border: 1px dashed #b8c7c1;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 15px;
+  color: #667770;
+  background: #f7faf8;
+  text-align: center;
+}
+
+.client-empty-content p {
+  margin: 0;
+}
+
+.client-empty-content button {
+  min-height: 42px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #ffffff;
+  background: #1f5c4c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.destination-heading-content {
+  display: grid;
+  gap: 10px;
+}
+
+.destination-title-control {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.destination-heading-edit-button {
+  width: 35px;
+  height: 35px;
+  margin-top: 5px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: #1f5c4c;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.destination-heading-edit-button:hover {
+  background: #17483c;
+  transform: scale(1.06);
+}
+
+.destination-heading-description {
+  max-width: 650px;
+  margin: 0;
+  color: #687a73;
+  line-height: 1.7;
+}

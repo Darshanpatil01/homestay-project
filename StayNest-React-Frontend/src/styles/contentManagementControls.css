@@ -1,0 +1,160 @@
+.section-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.content-add-button {
+  width: 41px;
+  height: 41px;
+  padding: 0;
+  color: #ffffff;
+  background-color: #1f5c4c;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(18, 51, 42, 0.2);
+}
+
+.content-add-button:hover {
+  background-color: #b77d23;
+  transform: scale(1.05);
+}
+
+.destination-card,
+.homestay-card,
+.stay-category-card,
+.experience-card,
+.benefit-card,
+.testimonial-card {
+  position: relative;
+}
+
+.content-management-actions {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 15;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.destination-card:hover
+  .content-management-actions,
+.homestay-card:hover
+  .content-management-actions,
+.stay-category-card:hover
+  .content-management-actions,
+.experience-card:hover
+  .content-management-actions,
+.benefit-card:hover
+  .content-management-actions,
+.testimonial-card:hover
+  .content-management-actions,
+.content-management-actions:focus-within {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.content-action-button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+}
+
+.content-action-button.edit {
+  background-color: #1f5c4c;
+}
+
+.content-action-button.delete {
+  background-color: #a53b3b;
+}
+
+.content-action-button:hover {
+  transform: scale(1.08);
+}
+
+.content-hidden-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 12;
+  padding: 6px 11px;
+  color: #ffffff;
+  background-color: #68756f;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.client-inactive-content {
+  opacity: 0.68;
+}
+
+.client-empty-content {
+  min-height: 180px;
+  padding: 35px;
+  color: #68756f;
+  background-color: #f7f5ef;
+  border: 1px dashed #b8c1bc;
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.client-empty-content button {
+  padding: 11px 17px;
+  color: #ffffff;
+  background-color: #173f35;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.customer-profile-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.content-add-button:focus-visible,
+.content-action-button:focus-visible {
+  outline: 3px solid rgba(210, 164, 70, 0.65);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .section-heading-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .content-management-actions {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}

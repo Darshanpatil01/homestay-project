@@ -1,0 +1,349 @@
+.experiences-section {
+  padding: 90px 6%;
+  background: #f7f4ee;
+}
+
+.experiences-heading {
+  max-width: 1200px;
+  margin: 0 auto 38px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.experiences-heading h2 {
+  max-width: 650px;
+  margin: 8px 0 0;
+  color: #183a31;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.experiences-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.experiences-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1f5c4c;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.experiences-view-all svg {
+  transition: transform 0.2s ease;
+}
+
+.experiences-view-all:hover svg {
+  transform: translateX(4px);
+}
+
+.experiences-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.experience-card {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #1a342c;
+  box-shadow: 0 15px 35px rgba(23, 51, 43, 0.12);
+}
+
+.experience-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.experience-card:hover img {
+  transform: scale(1.06);
+}
+
+.experience-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 24, 19, 0.05) 25%,
+    rgba(8, 24, 19, 0.88) 100%
+  );
+}
+
+.experience-card-content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 28px;
+  color: #ffffff;
+}
+
+.experience-card-content h3 {
+  margin: 0 0 9px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.experience-card-content p {
+  display: -webkit-box;
+  max-width: 290px;
+  margin: 0;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.experience-arrow {
+  width: 43px;
+  height: 43px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.experience-card:hover .experience-arrow {
+  color: #183a31;
+  background: #ffffff;
+  transform: translate(2px, -2px);
+}
+
+.experience-card:focus-visible {
+  outline: 3px solid rgba(31, 92, 76, 0.55);
+  outline-offset: 4px;
+}
+
+.experience-add-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: #1f5c4c;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(20, 35, 30, 0.18);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.experience-add-button:hover {
+  background: #17483c;
+  transform: scale(1.06);
+}
+
+.experience-client-actions {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 8;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.experience-card:hover .experience-client-actions,
+.experience-client-actions:focus-within {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.experience-action-button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.experience-action-button:hover {
+  transform: scale(1.08);
+}
+
+.experience-edit-button {
+  background: #1f5c4c;
+}
+
+.experience-edit-button:hover {
+  background: #17483c;
+}
+
+.experience-delete-button {
+  background: #a53b3b;
+}
+
+.experience-delete-button:hover {
+  background: #822d2d;
+}
+
+.experience-hidden-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 8;
+  padding: 6px 11px;
+  border-radius: 20px;
+  color: #ffffff;
+  background: #6d7773;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.client-inactive-content {
+  opacity: 0.58;
+}
+
+.experience-add-button:focus-visible,
+.experience-action-button:focus-visible {
+  outline: 3px solid rgba(211, 166, 75, 0.65);
+  outline-offset: 2px;
+}
+
+@media (max-width: 992px) {
+  .experiences-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .experiences-section {
+    padding: 70px 5%;
+  }
+
+  .experiences-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .experiences-heading-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .experience-client-actions {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .experiences-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card {
+    min-height: 390px;
+  }
+
+  .experience-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .experience-card-content {
+    padding: 22px;
+  }
+}
+
+.experiences-heading-content {
+  display: grid;
+  gap: 10px;
+}
+
+.experiences-title-control {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.experience-heading-edit-button {
+  width: 35px;
+  height: 35px;
+  margin-top: 5px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: #1f5c4c;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.experience-heading-edit-button:hover {
+  background: #17483c;
+  transform: scale(1.06);
+}
+
+.experience-heading-edit-button:focus-visible {
+  outline: 3px solid rgba(211, 166, 75, 0.65);
+  outline-offset: 3px;
+}
+
+.experiences-heading-description {
+  max-width: 650px;
+  margin: 0;
+  color: #687a73;
+  line-height: 1.7;
+}

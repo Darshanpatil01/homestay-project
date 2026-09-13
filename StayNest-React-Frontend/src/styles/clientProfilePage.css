@@ -1,0 +1,271 @@
+.client-profile-header p {
+  margin: 0 0 6px;
+  color: #af8030;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.client-profile-header h1 {
+  margin: 0 0 8px;
+  color: #153f34;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 500;
+}
+
+.client-profile-header span {
+  color: #6c7d76;
+  font-size: 15px;
+}
+
+.client-profile-success {
+  margin-top: 25px;
+  padding: 13px 16px;
+  border: 1px solid #afd5c8;
+  border-radius: 8px;
+  color: #225f4f;
+  background: #e8f6f1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.client-profile-layout {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 0.65fr)
+    minmax(0, 1.5fr);
+  align-items: start;
+  gap: 22px;
+}
+
+.client-profile-card,
+.client-profile-form-card {
+  border: 1px solid #e0e8e5;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(25, 55, 46, 0.06);
+}
+
+.client-profile-card {
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.client-profile-logo {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: #1f5c4c;
+  font-size: 31px;
+  font-weight: 700;
+}
+
+.client-profile-logo > img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.client-profile-logo-button {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  width: 36px;
+  height: 36px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: #b18436;
+  cursor: pointer;
+}
+
+.client-profile-logo-button input {
+  display: none;
+}
+
+.client-profile-card h2 {
+  margin: 0;
+  color: #1f3c32;
+  font-size: 21px;
+}
+
+.client-profile-card > p {
+  margin: 7px 0 0;
+  color: #71817b;
+  font-size: 13px;
+}
+
+.client-profile-contact-summary {
+  margin-top: 24px;
+  padding-top: 21px;
+  border-top: 1px solid #e6ece9;
+  display: grid;
+  gap: 14px;
+  text-align: left;
+}
+
+.client-profile-contact-summary span {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #667972;
+  font-size: 12px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.client-profile-contact-summary svg {
+  margin-top: 1px;
+  flex-shrink: 0;
+  color: #1f5c4c;
+}
+
+.client-profile-form-card {
+  padding: 28px;
+}
+
+.client-profile-form-heading {
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e6ece9;
+}
+
+.client-profile-form-heading p {
+  margin: 0 0 5px;
+  color: #af8030;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.client-profile-form-heading h2 {
+  margin: 0;
+  color: #203c33;
+  font-size: 23px;
+}
+
+.client-profile-form-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    minmax(0, 1fr)
+  );
+  gap: 18px;
+}
+
+.client-profile-form-grid label {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+  color: #334940;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.client-profile-form-grid input,
+.client-profile-form-grid textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #d6dfdc;
+  border-radius: 8px;
+  color: #293e36;
+  background: #ffffff;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.client-profile-form-grid textarea {
+  resize: vertical;
+}
+
+.client-profile-form-grid input:focus,
+.client-profile-form-grid textarea:focus {
+  border-color: #1f5c4c;
+  box-shadow: 0 0 0 3px rgba(31, 92, 76, 0.1);
+}
+
+.client-profile-full-field {
+  grid-column: 1 / -1;
+}
+
+.client-profile-form-actions {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e6ece9;
+  display: flex;
+  justify-content: flex-end;
+  gap: 11px;
+}
+
+.client-profile-form-actions button {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.client-profile-reset {
+  border: 1px solid #d3ddda;
+  color: #53675f;
+  background: #ffffff;
+}
+
+.client-profile-save {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ffffff;
+  background: #1f5c4c;
+}
+
+.client-profile-save:hover {
+  background: #17483c;
+}
+
+@media (max-width: 1000px) {
+  .client-profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .client-profile-card {
+    text-align: left;
+  }
+
+  .client-profile-logo {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .client-profile-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client-profile-full-field {
+    grid-column: auto;
+  }
+
+  .client-profile-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .client-profile-form-actions button {
+    width: 100%;
+  }
+}
