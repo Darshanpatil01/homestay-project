@@ -1,7 +1,9 @@
 package com.homestay.infrastructure.security;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -20,159 +22,163 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 public class SecurityConfig {
 
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+        private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    public SecurityConfig(
-            JwtAuthenticationFilter jwtAuthenticationFilter
-    ) {
-        this.jwtAuthenticationFilter = jwtAuthenticationFilter;
-    }
+        public SecurityConfig(
+                        JwtAuthenticationFilter jwtAuthenticationFilter) {
+                this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+        }
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(
-            HttpSecurity http
-    ) throws Exception {
+        @Bean
+        public SecurityFilterChain securityFilterChain(
+                        HttpSecurity http) throws Exception {
 
-        http
-                .csrf(csrf -> csrf.disable())
+                http
+                                .csrf(csrf -> csrf.disable())
 
-                .cors(cors -> cors.configurationSource(
-                        corsConfigurationSource()
-                ))
+                                .cors(cors -> cors.configurationSource(
+                                                corsConfigurationSource(
+                                                                null)))
 
-                .sessionManagement(session ->
-                        session.sessionCreationPolicy(
-                                SessionCreationPolicy.STATELESS
-                        )
-                )
+                                .sessionManagement(session -> session.sessionCreationPolicy(
+                                                SessionCreationPolicy.STATELESS))
 
-                .authorizeHttpRequests(authorize -> authorize
+                                .authorizeHttpRequests(authorize -> authorize
 
-                        // Browser and React preflight requests
-                        .requestMatchers(HttpMethod.OPTIONS, "/**")
-                        .permitAll()
+                                                .requestMatchers(
+                                                                HttpMethod.OPTIONS,
+                                                                "/**")
+                                                .permitAll()
 
-                        // Authentication
-                        .requestMatchers("/api/auth/**")
-                        .permitAll()
+                                                .requestMatchers("/api/auth/**")
+                                                .permitAll()
 
-                        // Public website settings
-                        .requestMatchers(
-                                HttpMethod.GET,
-                                "/api/website/**"
-                        )
-                        .permitAll()
+                                                .requestMatchers(
+                                                                HttpMethod.GET,
+                                                                "/api/website/**")
+                                                .permitAll()
 
-                        // Public website content
-                        .requestMatchers(
-                                HttpMethod.GET,
-                                "/api/homestays/**",
-                                "/api/properties/**",
-                                "/api/destinations/**",
-                                "/api/categories/**",
-                                "/api/experiences/**",
-                                "/api/benefits/**",
-                                "/api/testimonials/**"
-                        )
-                        .permitAll()
+                                                .requestMatchers(
+                                                                HttpMethod.GET,
+                                                                "/api/homestays/**",
+                                                                "/api/properties/**",
+                                                                "/api/destinations/**",
+                                                                "/api/categories/**",
+                                                                "/api/experiences/**",
+                                                                "/api/benefits/**",
+                                                                "/api/testimonials/**")
+                                                .permitAll()
 
-                        // Public uploaded images
-                        .requestMatchers(
-                                HttpMethod.GET,
-                                "/uploads/**"
-                        )
-                        .permitAll()
+                                                .requestMatchers(
+                                                                HttpMethod.GET,
+                                                                "/uploads/**")
+                                                .permitAll()
 
-                        // Swagger
-                        .requestMatchers(
-                                "/swagger-ui/**",
-                                "/swagger-ui.html",
-                                "/v3/api-docs/**"
-                        )
-                        .permitAll()
+                                                .requestMatchers(
+                                                                "/swagger-ui/**",
+                                                                "/swagger-ui.html",
+                                                                "/v3/api-docs/**")
+                                                .permitAll()
 
-                        // Spring error endpoint
-                        .requestMatchers("/error")
-                        .permitAll()
+                                                .requestMatchers("/error")
+                                                .permitAll()
 
-                        // Admin endpoints
-                        .requestMatchers("/api/admin/**")
-                        .hasRole("ADMIN")
+                                                .requestMatchers("/api/admin/**")
+                                                .hasRole("ADMIN")
 
-                        // Client endpoints
-                        .requestMatchers("/api/client/**")
-                        .hasAnyRole("CLIENT", "ADMIN")
+                                                .requestMatchers("/api/client/**")
+                                                .hasAnyRole("CLIENT", "ADMIN")
 
-                        // Logged-in user endpoints
-                        .requestMatchers(
-                                "/api/users/**",
-                                "/api/bookings/**",
-                                "/api/wishlist/**"
-                        )
-                        .authenticated()
+                                                .requestMatchers(
+                                                                "/api/users/**",
+                                                                "/api/bookings/**",
+                                                                "/api/wishlist/**")
+                                                .authenticated()
 
-                        .anyRequest()
-                        .authenticated()
-                )
+                                                .anyRequest()
+                                                .authenticated())
 
-                .addFilterBefore(
-                        jwtAuthenticationFilter,
-                        UsernamePasswordAuthenticationFilter.class
-                );
+                                .addFilterBefore(
+                                                jwtAuthenticationFilter,
+                                                UsernamePasswordAuthenticationFilter.class);
 
-        return http.build();
-    }
+                return http.build();
+        }
 
-    @Bean
-    public AuthenticationManager authenticationManager(
-            AuthenticationConfiguration configuration
-    ) throws Exception {
-        return configuration.getAuthenticationManager();
-    }
+        @Bean
+        public AuthenticationManager authenticationManager(
+                        AuthenticationConfiguration configuration) throws Exception {
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+                return configuration.getAuthenticationManager();
+        }
 
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration =
-                new CorsConfiguration();
+        @Bean
+        public PasswordEncoder passwordEncoder() {
+                return new BCryptPasswordEncoder();
+        }
 
-        configuration.setAllowedOrigins(
-                List.of("http://localhost:5173")
-        );
+        @Bean
+        public CorsConfigurationSource corsConfigurationSource(
+                        @Value("${application.frontend.url:http://localhost:5173}") String frontendUrl) {
 
-        configuration.setAllowedMethods(
-                List.of(
-                        "GET",
-                        "POST",
-                        "PUT",
-                        "PATCH",
-                        "DELETE",
-                        "OPTIONS"
-                )
-        );
+                CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedHeaders(
-                List.of("*")
-        );
+                List<String> allowedOrigins = new ArrayList<>();
 
-        configuration.setExposedHeaders(
-                List.of("Authorization")
-        );
+                allowedOrigins.add(
+                                "http://localhost:5173");
 
-        configuration.setAllowCredentials(true);
+                if (frontendUrl != null &&
+                                !frontendUrl.isBlank() &&
+                                !frontendUrl.equals(
+                                                "http://localhost:5173")) {
+                        allowedOrigins.add(
+                                        removeTrailingSlash(
+                                                        frontendUrl));
+                }
 
-        UrlBasedCorsConfigurationSource source =
-                new UrlBasedCorsConfigurationSource();
+                configuration.setAllowedOrigins(
+                                allowedOrigins);
 
-        source.registerCorsConfiguration(
-                "/**",
-                configuration
-        );
+                configuration.setAllowedMethods(
+                                List.of(
+                                                "GET",
+                                                "POST",
+                                                "PUT",
+                                                "PATCH",
+                                                "DELETE",
+                                                "OPTIONS"));
 
-        return source;
-    }
+                configuration.setAllowedHeaders(
+                                List.of("*"));
+
+                configuration.setExposedHeaders(
+                                List.of("Authorization"));
+
+                configuration.setAllowCredentials(true);
+
+                configuration.setMaxAge(3600L);
+
+                UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+
+                source.registerCorsConfiguration(
+                                "/**",
+                                configuration);
+
+                return source;
+        }
+
+        private String removeTrailingSlash(
+                        String url) {
+
+                String normalizedUrl = url.trim();
+
+                while (normalizedUrl.endsWith("/")) {
+                        normalizedUrl = normalizedUrl.substring(
+                                        0,
+                                        normalizedUrl.length() - 1);
+                }
+
+                return normalizedUrl;
+        }
 }
