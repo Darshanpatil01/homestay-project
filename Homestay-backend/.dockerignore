@@ -1,0 +1,16 @@
+target
+bin
+.settings
+.sts4-cache
+.project
+.classpath
+.factorypath
+
+.git
+.gitignore
+
+uploads
+*.log
+
+.env
+application-local.properties
